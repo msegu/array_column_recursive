@@ -6,7 +6,7 @@ PHP's array_column implementation that works on multidimensional arrays (not jus
 function array_column_recursive(array $haystack, $needle) {
     $found = [];
     array_walk_recursive($haystack, function($value, $key) use (&$found, $needle) {
-        if ($key == $needle)
+        if ($key === $needle)
             $found[] = $value;
     });
     return $found;
